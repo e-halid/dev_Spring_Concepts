@@ -11,8 +11,11 @@ public class ConfigurationApp {
 
         ApplicationContext container = new AnnotationConfigApplicationContext(ConfigurationAppConfig.class); //add config class name
 
-        Course course = container.getBean("selenium", Course.class);
+        Course course = container.getBean("java", Course.class);
 
         course.getTeachingHours();
+
+        System.out.println(course.toString());
+
     }
 }
