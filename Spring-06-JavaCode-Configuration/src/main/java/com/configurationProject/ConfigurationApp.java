@@ -1,0 +1,18 @@
+package com.configurationProject;
+
+import com.configurationProject.configs.ConfigurationAppConfig;
+import com.configurationProject.interfaces.Course;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ConfigurationApp {
+    public static void main(String[] args) {
+
+        ApplicationContext container = new AnnotationConfigApplicationContext(ConfigurationAppConfig.class); //add config class name
+
+        Course course = container.getBean("selenium", Course.class);
+
+        course.getTeachingHours();
+    }
+}
